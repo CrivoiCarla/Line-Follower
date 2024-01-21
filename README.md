@@ -9,8 +9,7 @@ Acest proiect prezintă crearea unui robot line follower, care combină ingenioz
 - **Senzor Infraroșu**: Detectează linia și ajută la navigare.
 - **Baterie LiPo**: Oferă o alimentare fiabilă și eficientă.
 - **Placă Personalizată**: Utilizată pentru structura robotului, echilibrând rezistența și greutatea.
-- **Shift Register**: Extinde capabilitățile digitale ale Arduino Uno.
-- **Sistem PID**: Folosind doar ajustările pentru KP (Proportional) și KD (Derivative).
+- **L293D motor driver**: Extinde capabilitățile digitale ale Arduino Uno.
 
 ### Caracteristici Unice:
 - **Calibrare Automată**: Permite robotului să se adapteze la diferite condiții de iluminare și texturi ale suprafeței.
@@ -19,8 +18,13 @@ Acest proiect prezintă crearea unui robot line follower, care combină ingenioz
 ## Implementare
 Implementarea acestui proiect a implicat un echilibru între hardware robust și software adaptabil. Fiecare componentă a fost selectată și integrată cu scopul de a optimiza performanța și fiabilitatea.
 
-### Sistemul PID
-Acest sistem a fost esențial pentru controlul precis al mișcării robotului. Concentrându-ne pe KP și KD, am reușit să obținem un răspuns rapid și precis, crucial pentru navigarea traseului complex.
+## Sistemul PID
+În acest proiect, am aplicat un sistem de control PID (Proportional-Integral-Derivative) pentru a regla mișcarea robotului. Acest sistem este esențial în obținerea unei navigări precise și eficiente.
+
+- **KP (Proportional)**: Ajustarea acestei valori ne-a ajutat să controlăm răspunsul robotului la abateri de la traseu. O valoare mai mare de KP înseamnă o reacție mai rapidă la abateri.
+- **KD (Derivative)**: Utilizarea KD ne-a permis să reducem oscilațiile și să stabilizăm mișcarea robotului, oferind o navigare mai lină și mai precisă.
+
+Am ales să nu utilizăm componenta KI (Integral) în acest proiect, deoarece am găsit că ajustările KP și KD au fost suficiente pentru a atinge performanța dorită.
 
 ### Calibrare Automată
 Sistemul de calibrare automată a fost o inovație cheie, permițând robotului să opereze eficient în condiții variate, fără intervenția manuală.
